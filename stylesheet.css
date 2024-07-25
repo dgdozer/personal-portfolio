@@ -1,0 +1,472 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Gugi', sans-serif;
+}
+
+:root {
+    --bg-color: #09113d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #dced78;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid var(--bg-color);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon
+{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+.home
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 2rem;
+}
+
+.home-img img {
+    align-self: flex-end; 
+    /* Align the image to the right */
+    width: 40vw;
+    animation: floating 3s ease-in-out infinite; /* Adjust duration and easing as needed */
+}
+
+.home-sci a
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    margin-top: 5px;
+}
+
+.home-sci a:hover{
+    background-color: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn {
+    justify-content: center;
+    display:inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 2rem;
+    color: var(--bg-color);
+    letter-spacing: .2rem;
+    font-weight: 650;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+section.about {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.about {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    gap: 2rem;
+    background: var(--second-bg-color);
+}
+
+.about-img img {
+    margin-bottom: 100px;
+}
+
+.heading {
+    text-align: center;
+    font: 5rem;
+}
+
+.about {
+    background: linear-gradient(to bottom, var(--bg-color), rgba(255, 0, 0, 0.219));
+    color: white;
+    padding: 50px 0;
+}
+
+.about-content {
+    margin-left: 50px
+}
+
+.about-content h2 {
+    text-align: left;
+    font-size: 7.5rem;
+}
+.about-content h3 {
+    font-size: 4.6rem;
+}
+.about-content p {
+    font-size: 2.0rem;
+    margin: 2rem 0 4rem;
+}
+
+.portfolio {
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.219), var(--bg-color));
+    color: white;
+    padding: 100px 0 50px 0; /* Add extra padding at the top */
+}
+
+.portfolio h2 {
+    font-size: 48pt; /* Increased font size */
+    margin-bottom: 4rem;
+    text-align: center; /* Center align the heading */
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px; /* Match this with the max-width of your navbar */
+    margin: 0 auto; /* Center the container */
+    padding: 0 2rem;
+}
+
+.portfolio-container .portfolio-box {
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem var(--second-bg-color);
+    overflow: hidden;
+    display: flex;
+    height: 300px; /* Adjust the height of the boxes */
+}
+
+.portfolio-box img {
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.2);
+}
+
+.portfolio-box p {
+    margin: 0;
+    font-size: 2.0px;
+    font-family: 'Arial', 'sans-serif';
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 2rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.5rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i {
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+/* Center-align the content within the .download container */
+.download {
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px; /* Add margin from the header */
+}
+
+/* Style for the button */
+.btn {
+    margin-top: -3rem; /* Add spacing between the image and button */
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 2rem;
+    color: var(--bg-color);
+    letter-spacing: 0.2rem;
+    font-weight: 650;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+/* Style for the heading */
+.download h2 {
+    margin-top: 3rem;
+    font-size: 5rem;
+    margin-bottom: 6rem; /* Increase the margin to create more space below the heading */
+    animation: floating 3s ease-in-out infinite; /* Adjust duration and easing as needed */
+}
+
+/* Style for the image */
+.download img {
+    width: 20%; /* Adjust the width as needed */
+    position: relative; /* Position the image relative to its container */
+    top: -70px; /* Adjust the value to move the image higher or lower */
+    margin-top: 3rem; /* Increase the margin to create more space above the image */
+    /* Adding the floating animation */
+    animation: floating 3s ease-in-out infinite; 
+}
+
+/* Define the floating animation */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Adjust the floating distance */
+    }
+}
+
+/* Style for the copyright footer */
+footer.copyright {
+    text-align: left;
+    padding: 1rem;
+    background-color: var(--second-bg-color);
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footerIconTop {
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+}
+
+/* Adjust the size of the up arrow icon */
+.footerIconTop a i {
+    font-size: 30px; /* Adjust the size as needed */
+    color:#dced78;
+}
+
+/* ADJUSTMENTS FOR SMALLER SCREENS */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+    section {
+        padding: 10rem 3% 2rem;
+    }
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .download {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid black;
+        box-shadow: 0 .5rem 1 rem black;
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column-reverse;
+    }
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+    .portfolio-container {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 365px) {
+    .home-img img {
+        width: 90vw;
+    }
+
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+    .footer p{
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+  
